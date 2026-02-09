@@ -1,0 +1,2 @@
+# Hybrid Disease Prediction & Decision Support System
+This project aims to build a smart healthcare diagnostic tool that uses a Hybrid AI approach. It combines traditional Machine Learning (ML) for high-accuracy disease classification with a Large Language Model (LLM) for personalized medical guidance. A unique feature of this project is the integration of Psychological Screening to distinguish between actual physiological symptoms and anxiety-driven somatic concerns.
