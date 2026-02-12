@@ -42,11 +42,8 @@ instance/
 .env
 .env.local
 
-# Models and data
-*.pkl
-*.pickle
-*.joblib
-*.csv
+
+
 
 # Logs
 *.log
