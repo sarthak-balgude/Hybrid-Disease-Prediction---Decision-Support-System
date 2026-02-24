@@ -1,0 +1,72 @@
+body {
+    background-color: #050914;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* 3D Background Canvas */
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Glassmorphism */
+.glass-card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card:hover {
+    background: rgba(30, 41, 59, 0.6);
+    border-color: rgba(56, 189, 248, 0.5);
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px -5px rgba(14, 165, 233, 0.4);
+}
+
+/* Specific Benefit Card Style */
+.benefit-card {
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.3) 0%, rgba(15, 23, 42, 0.3) 100%);
+    border-left: 4px solid #334155; 
+}
+.benefit-card:hover {
+    border-left-color: #0ea5e9; 
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Footer Link Hover Effect */
+.footer-link {
+    color: #94a3b8;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+.footer-link:hover {
+    color: #38bdf8;
+}
+
+/* Custom Scrollbar for Modal */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0B1120; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+
+/* Checkbox Customization */
+.custom-checkbox {
+    accent-color: #0ea5e9;
+}

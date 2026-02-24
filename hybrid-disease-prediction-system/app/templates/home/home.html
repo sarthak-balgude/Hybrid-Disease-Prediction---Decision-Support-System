@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Health System | GPD Software Solutions</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="home.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0B1120',
+                            accent: '#0ea5e9',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-sky-500 selection:text-white">
+
+    <div id="canvas-container"></div>
+
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0B1120]/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-lg shadow-white/5">
+                    <span class="font-display font-bold text-slate-900 text-xl tracking-tighter">GPD</span>
+                </div>
+                <div>
+                    <span class="block font-display font-bold text-lg leading-none tracking-tight">GPD Software</span>
+                    <span class="block text-[10px] text-slate-400 uppercase tracking-widest">Solutions</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <button onclick="toggleLogin()" class="px-6 py-2.5 bg-slate-800 border border-slate-700 text-white rounded-lg font-medium text-sm hover:bg-slate-700 hover:border-slate-500 transition shadow-lg flex items-center gap-2">
+                    <i class="fas fa-user-circle text-xs text-sky-400"></i> User Login
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-20">
+        <section class="min-h-[80vh] flex flex-col items-center justify-center text-center px-6 relative">
+            <div class="max-w-5xl mx-auto space-y-8 animate-fade-in-up">
+                <h1 class="text-5xl md:text-7xl font-display font-bold leading-tight tracking-tight">
+                    AI-Powered Disease Prediction<br>
+                    with <span class="text-gradient">Smart Decision Support</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
+                    Detect health risks early using symptom-based machine learning and intelligent guidance.
+                    <span class="block mt-2 text-lg text-slate-500">Fast • Accurate • Psychology-Aware • Hospital-Connected</span>
+                </p>
+                <div class="pt-10 flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="scrollToSection('features')" class="group px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-semibold rounded-lg transition-all shadow-[0_0_30px_rgba(14,165,233,0.5)] flex items-center justify-center gap-2">
+                        View System Overview
+                        <i class="fas fa-arrow-down group-hover:translate-y-1 transition"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-24 max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-sky-500 font-bold tracking-widest uppercase text-xs mb-3">System Architecture</h2>
+                    <h3 class="text-3xl md:text-4xl font-display font-bold">Core Feature Set</h3>
+                </div>
+                <div class="h-px bg-slate-800 flex-1 ml-8 mb-2 hidden md:block"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl text-sky-500"><i class="fas fa-microchip"></i></div>
+                    <h4 class="text-lg font-bold mb-3 text-white">Smart Disease Prediction</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Predict possible diseases instantly using advanced machine learning models trained on medical symptom data.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl text-indigo-500"><i class="fas fa-balance-scale"></i></div>
+                    <h4 class="text-lg font-bold mb-3 text-white">Confidence-Based Logic</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">High-confidence predictions show results. Low-confidence cases are handled safely with AI guidance.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl text-rose-500"><i class="fas fa-user-shield"></i></div>
+                    <h4 class="text-lg font-bold mb-3 text-white">Psychology-Aware Support</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Includes stress, anxiety, and sleep screening to avoid false illness assumptions and unnecessary panic.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl text-amber-500"><i class="fas fa-lightbulb"></i></div>
+                    <h4 class="text-lg font-bold mb-3 text-white">Uncertainty AI Guidance</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">If symptoms are unclear, the system provides safe, practical health advice instead of risky guesses.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl text-emerald-500"><i class="fas fa-hospital-alt"></i></div>
+                    <h4 class="text-lg font-bold mb-3 text-white">Nearest Hospital Mapping</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Automatically shows nearby hospitals and recommended medical specialties for your specific condition.</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl text-purple-500"><i class="fas fa-chart-pie"></i></div>
+                    <h4 class="text-lg font-bold mb-3 text-white">Top-3 Probability Display</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">View multiple possible conditions with probability scores for better transparency and awareness.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-900/30 border-y border-white/5 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-sky-500 font-bold tracking-widest uppercase text-xs mb-3">Value Proposition</h2>
+                    <h3 class="text-3xl md:text-4xl font-display font-bold text-white">Strategic User Benefits</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card benefit-card p-8 rounded-r-xl flex items-start gap-5 group transition-all duration-300 hover:translate-x-1">
+                        <div class="w-14 h-14 bg-slate-800 rounded-lg flex items-center justify-center flex-shrink-0 text-sky-400 text-2xl group-hover:bg-slate-700 transition">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Anxiety Mitigation</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Avoid unnecessary panic. Our system filters out "Cyberchondria" by validating uncertain symptoms against psychological stress markers.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card benefit-card p-8 rounded-r-xl flex items-start gap-5 group transition-all duration-300 hover:translate-x-1">
+                        <div class="w-14 h-14 bg-slate-800 rounded-lg flex items-center justify-center flex-shrink-0 text-sky-400 text-2xl group-hover:bg-slate-700 transition">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Instant Triage</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Get instant health insights. Users can assess the urgency of their condition before scheduling a doctor's visit.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card benefit-card p-8 rounded-r-xl flex items-start gap-5 group transition-all duration-300 hover:translate-x-1">
+                        <div class="w-14 h-14 bg-slate-800 rounded-lg flex items-center justify-center flex-shrink-0 text-sky-400 text-2xl group-hover:bg-slate-700 transition">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Resource Optimization</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Find the right hospital quickly. We route patients to the correct specialist (e.g., Cardiologist vs GP), saving time.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card benefit-card p-8 rounded-r-xl flex items-start gap-5 group transition-all duration-300 hover:translate-x-1">
+                        <div class="w-14 h-14 bg-slate-800 rounded-lg flex items-center justify-center flex-shrink-0 text-sky-400 text-2xl group-hover:bg-slate-700 transition">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Holistic Analysis</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Understand both physical and psychological factors. A complete health picture leads to smarter decisions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 max-w-7xl mx-auto px-6">
+            <div class="glass-card rounded-3xl p-10 md:p-14 border border-slate-700/50 relative overflow-hidden">
+                <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-sky-900/10 to-transparent pointer-events-none"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6">
+                            <i class="fas fa-check-circle"></i> Safety Protocol Active
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-display font-bold mb-6">Built for Safe Decision Support</h3>
+                        <p class="text-slate-400 text-lg mb-8 leading-relaxed">We engineered a multi-layer safety architecture to ensure users receive responsible guidance, not just raw data.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-sky-500"><i class="fas fa-percentage"></i></div>
+                                <div>
+                                    <h5 class="text-white font-bold text-sm">Algorithmic Confidence Gates</h5>
+                                    <p class="text-slate-500 text-xs">Predictions below 65% certainty are automatically suppressed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-6 shadow-2xl">
+                            <div class="flex justify-between items-center mb-6 border-b border-slate-800 pb-4">
+                                <span class="text-xs font-mono text-slate-500">SYSTEM_LOGIC_CORE</span>
+                                <div class="flex gap-1">
+                                    <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                                    <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                    <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-3 font-mono text-xs">
+                                <div class="flex justify-between text-slate-300"><span>> Input.Symptoms</span><span class="text-sky-400">Received</span></div>
+                                <div class="flex justify-between text-slate-300"><span>> Model.Confidence</span><span class="text-amber-400">0.42 (LOW)</span></div>
+                                <div class="flex justify-between text-slate-300"><span>> User.AnxietyScore</span><span class="text-rose-400">HIGH</span></div>
+                                <div class="h-px bg-slate-800 my-2"></div>
+                                <div class="flex justify-between font-bold"><span class="text-white">> Action.Trigger</span><span class="text-emerald-400">SAFE_FALLBACK_MODE</span></div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-emerald-600 text-white px-4 py-2 rounded-lg text-xs font-bold shadow-lg animate-pulse-slow">Logic Verified</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 text-center px-6">
+            <div class="max-w-4xl mx-auto glass-card p-12 rounded-3xl relative overflow-hidden">
+                <div class="absolute top-[-50%] left-[-20%] w-[500px] h-[500px] bg-sky-600/20 rounded-full blur-[100px]"></div>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mb-6 relative z-10 text-white">Predict, Understand, and Act Early</h2>
+                <div class="flex flex-col md:flex-row justify-center gap-6 relative z-10">
+                    <button onclick="toggleLogin()" class="px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-bold rounded-lg shadow-xl shadow-sky-600/20 transition transform hover:-translate-y-1">Start Health Assessment</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/5 bg-[#0B1120] pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-8 h-8 bg-white rounded flex items-center justify-center font-bold text-slate-900 text-sm">GPD</div>
+                        <span class="font-display font-bold text-white text-lg">GPD Software</span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Pioneering AI-driven healthcare solutions for safer, smarter diagnostics.</p>
+                    <div class="flex gap-4">
+                        <a href="https://youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-red-600 hover:text-white transition duration-300"><i class="fab fa-youtube"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-[#0077b5] hover:text-white transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="hidden md:block"></div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Support</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a onclick="openFAQ(event)" class="footer-link">FAQ / Help Center</a></li>
+                        <li><a onclick="openContact(event)" class="footer-link">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6">Legal</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a onclick="openTerms(event)" class="footer-link">Terms & Conditions</a></li>
+                        <li><a onclick="openPrivacy(event)" class="footer-link">Privacy Policy</a></li>
+                        <li><a onclick="openDisclaimer(event)" class="footer-link">Medical Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-600">
+                <p>&copy; 2024 GPD Software Solutions Pvt. Ltd. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Enterprise Healthcare Division • Confidential Client Presentation</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="login-modal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-slate-950/90 backdrop-blur-md transition-opacity opacity-0 p-4">
+        <div class="w-full max-w-md bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl transform scale-95 transition-transform duration-300 p-8" id="login-panel">
+            <div class="flex justify-between items-center mb-8 border-b border-white/5 pb-4">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-white rounded flex items-center justify-center font-bold text-slate-900 text-sm">GPD</div>
+                    <span class="font-bold text-white text-sm">User Login</span>
+                </div>
+                <button onclick="toggleLogin()" class="text-slate-400 hover:text-white transition"><i class="fas fa-times"></i></button>
+            </div>
+            <form onsubmit="handleAuth(event)" class="space-y-5">
+                <div><label class="block text-xs font-bold text-slate-400 uppercase mb-2">Email ID</label><input type="email" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-sky-500 focus:outline-none transition font-mono text-sm" placeholder="name@example.com"></div>
+                <div><label class="block text-xs font-bold text-slate-400 uppercase mb-2">Password</label><input type="password" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-sky-500 focus:outline-none transition font-mono text-sm" placeholder="••••••••"></div>
+                
+                <div class="flex items-start gap-3 mt-4">
+                    <input type="checkbox" id="login-agree" class="mt-1 custom-checkbox w-4 h-4 rounded border-slate-600 bg-slate-800 text-sky-500 focus:ring-sky-500 focus:ring-offset-slate-900 cursor-pointer">
+                    <label for="login-agree" class="text-xs text-slate-400 leading-relaxed cursor-pointer select-none">
+                        I agree to the <a href="#" onclick="openTerms(event)" class="text-sky-400 hover:text-sky-300 hover:underline">Terms & Conditions</a> and <a href="#" onclick="openPrivacy(event)" class="text-sky-400 hover:text-sky-300 hover:underline">Privacy Policy</a>.
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-3.5 rounded-lg shadow-lg transition mt-2">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="contact-modal" class="fixed inset-0 z-[110] hidden flex-col items-center justify-center bg-slate-950/90 backdrop-blur-md transition-opacity opacity-0 p-4">
+        <div class="w-full max-w-md bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl transform scale-95 transition-transform duration-300 flex flex-col" id="contact-panel">
+            <div class="flex justify-between items-center p-6 border-b border-white/5 shrink-0">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-white rounded flex items-center justify-center font-bold text-slate-900 text-sm">GPD</div>
+                    <span class="font-display font-bold text-white text-lg">Contact Us</span>
+                </div>
+                <button onclick="closeContact()" class="text-slate-400 hover:text-white transition"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="p-8 text-center space-y-4">
+                <div class="w-16 h-16 bg-sky-900/30 rounded-full flex items-center justify-center mx-auto mb-4 border border-sky-500/30 text-sky-400 text-2xl">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h4 class="text-white font-bold text-lg">Get in Touch</h4>
+                <p class="text-slate-400 text-sm leading-relaxed">For any inquiries, support, or feedback regarding this system, please reach out to us via email at:</p>
+                <div class="mt-4 p-4 bg-slate-900 border border-slate-700 rounded-lg flex items-center justify-center select-all cursor-text hover:border-sky-500/50 transition">
+                    <span class="text-sky-400 font-mono text-sm font-bold tracking-wide">aidiseaseprediction@gmail.com</span>
+                </div>
+                <p class="text-xs text-slate-500 mt-2">Click the email address to select and copy.</p>
+            </div>
+            <div class="p-6 border-t border-white/5 bg-slate-900/50 rounded-b-2xl flex justify-end shrink-0">
+                <button onclick="closeContact()" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition border border-slate-700">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="faq-modal" class="fixed inset-0 z-[110] hidden flex-col items-center justify-center bg-slate-950/90 backdrop-blur-md transition-opacity opacity-0 p-4">
+        <div class="w-full max-w-3xl bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl transform scale-95 transition-transform duration-300 flex flex-col max-h-[85vh]" id="faq-panel">
+            <div class="flex justify-between items-center p-6 border-b border-white/5 shrink-0">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-white rounded flex items-center justify-center font-bold text-slate-900 text-sm">GPD</div>
+                    <span class="font-display font-bold text-white text-lg">FAQ / Help Center</span>
+                </div>
+                <button onclick="closeFAQ()" class="text-slate-400 hover:text-white transition"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-4 text-sm text-slate-400 custom-scrollbar">
+                
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">1. What is this software used for?</h4>
+                    <p class="leading-relaxed">This software helps users understand possible disease risks based on symptoms using machine learning. It provides decision support only and is intended for educational purposes.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">2. Is this a medical diagnosis tool?</h4>
+                    <p class="leading-relaxed">No. This system does not provide medical diagnosis or treatment. It only generates prediction-based suggestions.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">3. How does the prediction work?</h4>
+                    <p class="leading-relaxed">The system analyzes symptoms entered by the user and compares them with trained machine learning models to estimate possible disease risks.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">4. Why did the system not show a disease prediction?</h4>
+                    <p class="leading-relaxed">If the model confidence is low, the system suppresses prediction to avoid unreliable results and instead provides general guidance.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">5. What does “confidence score” mean?</h4>
+                    <p class="leading-relaxed">The confidence score shows how sure the model is about a prediction. Higher confidence means the model is more certain.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">6. Why are multiple diseases shown sometimes?</h4>
+                    <p class="leading-relaxed">Some diseases share similar symptoms. In such cases, the system shows top possible diseases instead of a single result.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">7. What is the psychology screening section for?</h4>
+                    <p class="leading-relaxed">Psychology inputs such as stress, anxiety, and sleep quality help the system provide better guidance when prediction confidence is low. It does not diagnose mental health conditions.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">8. Are my inputs stored or shared?</h4>
+                    <p class="leading-relaxed">No. User data is used only for generating predictions and is not shared with third parties unless explicitly implemented by the developer.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">9. How are hospital recommendations selected?</h4>
+                    <p class="leading-relaxed">Hospitals are recommended based on the predicted disease specialty and user-selected city. The system does not endorse any hospital.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2 text-rose-400">10. What should I do if symptoms are serious?</h4>
+                    <p class="leading-relaxed">If symptoms are severe, worsening, or emergency-related, immediately consult a qualified doctor or nearest hospital.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">11. Can I rely completely on this software?</h4>
+                    <p class="leading-relaxed">No. This tool is for educational and informational purposes only. Always seek professional medical advice for real health issues.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">12. What should I do if the result looks incorrect?</h4>
+                    <p class="leading-relaxed">Check your entered symptoms and try again. If uncertainty continues, consult a healthcare professional.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">13. Why does the system ask for psychology inputs?</h4>
+                    <p class="leading-relaxed">Sometimes stress or anxiety can affect how symptoms are experienced. These inputs help improve guidance in uncertain cases.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">14. Is internet required to use this system?</h4>
+                    <p class="leading-relaxed">If deployed locally, internet may not be required. Some features may need internet depending on implementation.</p>
+                </div>
+
+                <div class="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                    <h4 class="text-white font-bold mb-2">15. Who developed this software?</h4>
+                    <p class="leading-relaxed">This software is a student project developed for educational and research purposes.</p>
+                </div>
+
+            </div>
+            <div class="p-6 border-t border-white/5 bg-slate-900/50 rounded-b-2xl flex justify-end shrink-0">
+                <button onclick="closeFAQ()" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition border border-slate-700">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="terms-modal" class="fixed inset-0 z-[110] hidden flex-col items-center justify-center bg-slate-950/90 backdrop-blur-md transition-opacity opacity-0 p-4">
+        <div class="w-full max-w-2xl bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl transform scale-95 transition-transform duration-300 flex flex-col max-h-[85vh]" id="terms-panel">
+            <div class="flex justify-between items-center p-6 border-b border-white/5 shrink-0">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-white rounded flex items-center justify-center font-bold text-slate-900 text-sm">GPD</div>
+                    <span class="font-display font-bold text-white text-lg">Terms & Conditions</span>
+                </div>
+                <button onclick="closeTerms()" class="text-slate-400 hover:text-white transition"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-400 custom-scrollbar">
+                <div><h4 class="text-white font-bold mb-2 text-base">Educational Purpose</h4><p class="leading-relaxed">This software is developed for educational and research purposes only. It demonstrates symptom-based disease prediction using machine learning and decision support techniques.</p></div>
+                <div><h4 class="text-white font-bold mb-2 text-base">Not a Medical Diagnosis</h4><p class="leading-relaxed">This system does not provide medical diagnosis, treatment, or prescription. The results are predictive estimates and must not be considered as professional medical advice.</p></div>
+                <div><h4 class="text-white font-bold mb-2 text-base">User Responsibility</h4><p class="leading-relaxed">By using this software, you agree that the information entered by you is accurate to the best of your knowledge. You understand that the output is only a suggestion and you are responsible for consulting a qualified medical professional for any health concerns.</p></div>
+                <div><h4 class="text-white font-bold mb-2 text-base">Prediction Accuracy</h4><p class="leading-relaxed">Prediction results depend on dataset quality and user inputs. The system may produce incorrect or uncertain results. In low-confidence cases, disease prediction may be suppressed for safety.</p></div>
+                <div><h4 class="text-white font-bold mb-2 text-base">Psychology Screening Disclaimer</h4><p class="leading-relaxed">Psychology-related inputs such as stress, anxiety, and sleep quality are used only for decision support and guidance generation. This system does not diagnose any mental health condition.</p></div>
+                <div><h4 class="text-white font-bold mb-2 text-base">Guidance Output</h4><p class="leading-relaxed">Any guidance shown by the system is informational only and should not replace medical consultation or professional healthcare advice.</p></div>
+                <div><h4 class="text-white font-bold mb-2 text-base">Hospital Recommendations</h4><p class="leading-relaxed">Hospital recommendations are displayed for informational purposes only. The software does not guarantee, verify, or endorse any healthcare provider.</p></div>
+                <div><h4 class="text-white font-bold mb-2 text-base">Data Privacy</h4><p class="leading-relaxed">User inputs are used only for generating predictions. No personal medical records are permanently stored unless explicitly implemented by the developer.</p></div>
+                <div><h4 class="text-white font-bold mb-2 text-base">Limitation of Liability</h4><p class="leading-relaxed">The developers are not responsible for any medical decisions, health outcomes, or consequences resulting from the use or misuse of this software.</p></div>
+                <div class="p-4 bg-sky-900/20 border border-sky-500/20 rounded-lg mt-4">
+                    <h4 class="text-sky-400 font-bold mb-1 text-base">Consent</h4>
+                    <p class="leading-relaxed text-sky-100/70">By clicking the “Predict” button, you confirm that you have read, understood, and agreed to these Terms & Conditions and acknowledge that this system is not a substitute for professional medical advice.</p>
+                </div>
+            </div>
+            <div class="p-6 border-t border-white/5 bg-slate-900/50 rounded-b-2xl flex justify-end shrink-0">
+                <button onclick="closeTerms()" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition border border-slate-700">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="privacy-modal" class="fixed inset-0 z-[110] hidden flex-col items-center justify-center bg-slate-950/90 backdrop-blur-md transition-opacity opacity-0 p-4">
+        <div class="w-full max-w-2xl bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl transform scale-95 transition-transform duration-300 flex flex-col max-h-[85vh]" id="privacy-panel">
+            <div class="flex justify-between items-center p-6 border-b border-white/5 shrink-0">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-white rounded flex items-center justify-center font-bold text-slate-900 text-sm">GPD</div>
+                    <span class="font-display font-bold text-white text-lg">Privacy Policy</span>
+                </div>
+                <button onclick="closePrivacy()" class="text-slate-400 hover:text-white transition"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-400 custom-scrollbar">
+                <div>
+                    <h4 class="text-white font-bold mb-2 text-base">Purpose of Data Collection</h4>
+                    <p class="leading-relaxed">This software collects user input only to generate symptom-based predictions and decision support results. Data is used strictly for system functionality.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-2 text-base">Information Collected</h4>
+                    <p class="leading-relaxed mb-2">The system may collect the following information entered by the user:</p>
+                    <ul class="list-disc list-inside space-y-1 ml-2">
+                        <li>Age</li>
+                        <li>Gender</li>
+                        <li>Symptoms</li>
+                        <li>City (for hospital recommendation)</li>
+                        <li>Psychology screening inputs (stress, anxiety, sleep quality)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-2 text-base">Use of Information</h4>
+                    <p class="leading-relaxed mb-2">The information provided is used only to:</p>
+                    <ul class="list-disc list-inside space-y-1 ml-2">
+                        <li>Generate disease prediction results</li>
+                        <li>Calculate confidence scores</li>
+                        <li>Provide guidance output</li>
+                        <li>Recommend hospitals based on prediction</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-2 text-base">Data Storage</h4>
+                    <p class="leading-relaxed">By default, user data is processed temporarily and is not permanently stored. If future versions include storage features, users will be informed accordingly.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-2 text-base">No Medical Record Creation</h4>
+                    <p class="leading-relaxed">This software does not create or maintain official medical records and should not be treated as a healthcare database.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-2 text-base">Data Sharing</h4>
+                    <p class="leading-relaxed">User data is not sold, shared, or distributed to third parties. The system does not transmit personal data to external organizations.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-2 text-base">Security</h4>
+                    <p class="leading-relaxed">Reasonable technical measures are used to protect user inputs during processing; however, no system can guarantee complete security.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-2 text-base">Third-Party Services</h4>
+                    <p class="leading-relaxed">Hospital information or other reference data may come from external datasets. The software does not control third-party services or their policies.</p>
+                </div>
+                <div class="p-4 bg-emerald-900/20 border border-emerald-500/20 rounded-lg mt-4">
+                    <h4 class="text-emerald-400 font-bold mb-1 text-base">User Consent</h4>
+                    <p class="leading-relaxed text-emerald-100/70">By using this software and clicking “Predict”, you agree to the collection and use of information as described in this Privacy Policy.</p>
+                </div>
+                <div class="p-4 bg-slate-800 rounded-lg mt-4 border border-slate-700">
+                    <h4 class="text-white font-bold mb-1 text-base">Educational Use Disclaimer</h4>
+                    <p class="leading-relaxed">This software is developed for educational and demonstration purposes only and is not intended for professional medical use.</p>
+                </div>
+            </div>
+            <div class="p-6 border-t border-white/5 bg-slate-900/50 rounded-b-2xl flex justify-end shrink-0">
+                <button onclick="closePrivacy()" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition border border-slate-700">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="disclaimer-modal" class="fixed inset-0 z-[110] hidden flex-col items-center justify-center bg-slate-950/90 backdrop-blur-md transition-opacity opacity-0 p-4">
+        <div class="w-full max-w-2xl bg-[#0f172a] border border-white/10 rounded-2xl shadow-2xl transform scale-95 transition-transform duration-300 flex flex-col max-h-[85vh]" id="disclaimer-panel">
+            <div class="flex justify-between items-center p-6 border-b border-white/5 shrink-0">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-white rounded flex items-center justify-center font-bold text-slate-900 text-sm">GPD</div>
+                    <span class="font-display font-bold text-white text-lg">Medical Disclaimer</span>
+                </div>
+                <button onclick="closeDisclaimer()" class="text-slate-400 hover:text-white transition"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-6 text-sm text-slate-400 custom-scrollbar">
+                
+                <p class="leading-relaxed">This software is intended for educational and informational purposes only. It is not a medical device and does not provide medical diagnosis, treatment, or professional healthcare advice.</p>
+                
+                <p class="leading-relaxed">The disease predictions and guidance generated by this system are based on machine learning models and user-provided inputs. Results may be inaccurate or incomplete and should not be considered a substitute for consultation with a qualified healthcare professional.</p>
+                
+                <p class="leading-relaxed">Users are strongly advised to seek advice from a licensed doctor or medical expert for any health concerns, symptoms, or medical decisions.</p>
+                
+                <p class="leading-relaxed">The psychology screening feature included in this system is intended only for general decision support and does not diagnose mental health conditions.</p>
+                
+                <p class="leading-relaxed">Hospital recommendations are provided for informational purposes only and do not represent medical endorsement or guarantee of services.</p>
+                
+                <div class="p-4 bg-rose-900/20 border border-rose-500/30 rounded-lg mt-4">
+                    <h4 class="text-rose-400 font-bold mb-3 text-base">By using this software, you acknowledge and agree that:</h4>
+                    <ul class="list-disc list-inside space-y-2 ml-2 text-rose-100/80">
+                        <li>The system provides decision support only.</li>
+                        <li>All medical decisions must be made by qualified healthcare professionals.</li>
+                        <li>The developers are not responsible for any medical outcomes or consequences arising from the use of this software.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="p-6 border-t border-white/5 bg-slate-900/50 rounded-b-2xl flex justify-end shrink-0">
+                <button onclick="closeDisclaimer()" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg transition border border-slate-700">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>
