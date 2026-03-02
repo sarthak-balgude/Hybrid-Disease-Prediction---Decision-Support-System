@@ -5,16 +5,16 @@ from . import auth_bp
 
 @auth_bp.route("/login", methods=["POST"])
 def login():
-    username=request.form.get("username")
+    email=request.form.get("email")
     password=request.form.get("password")
 
-    if not username or not password:
-        return render_template("home.html", error="Username and password are required.")
+    if not email or not password:
+        return render_template("home.html", error="Email and password are required.")
     
-    session["username"]=username
+    session["email"]=email
     session["password"]=password
 
-    flash("login succesful")
+    flash("login successful")
 
     return redirect(url_for("main.home"))
 

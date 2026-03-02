@@ -1,0 +1,57 @@
+name,city,type,phone,specialties
+AIIMS Delhi,New Delhi,Government,011-26588500,Cardiology|Neurology|Pulmonology|General Medicine
+Safdarjung Hospital,New Delhi,Government,011-26165060,General Medicine|Cardiology|Pulmonology
+Fortis Escorts Heart Institute,New Delhi,Private,011-47135000,Cardiology|Neurology
+Apollo Hospital,New Delhi,Private,011-26925858,Cardiology|Pulmonology|Gastroenterology
+Max Super Speciality Hospital,New Delhi,Private,011-40554055,Cardiology|Neurology|Pulmonology
+Sir Ganga Ram Hospital,New Delhi,Private,011-25750000,Cardiology|Pulmonology|Gastroenterology
+BLK Max Hospital,New Delhi,Private,011-30403040,Cardiology|Neurology|General Medicine
+AIIMS Rishikesh,Rishikesh,Government,0135-2462929,Cardiology|Neurology|Pulmonology|General Medicine
+Doon Hospital,Dehradun,Government,0135-2657007,General Medicine|Cardiology|Neurology
+Max Super Speciality Hospital,Dehradun,Private,1800-120-3000,Cardiology|Pulmonology|Gastroenterology
+Shri Mahant Indiresh Hospital,Dehradun,Private,0135-6677777,Cardiology|General Medicine|Neurology
+Himalayan Hospital,Jolly Grant,Private,0135-2471150,General Medicine|Pulmonology|Gastroenterology
+District Hospital,Haridwar,Government,01334-265555,General Medicine|Pulmonology
+King George Medical University,Lucknow,Government,0522-2257540,Cardiology|Neurology|General Medicine
+Sanjay Gandhi PGI,Lucknow,Government,0522-2494000,Cardiology|Neurology|Gastroenterology
+Medanta Hospital,Gurgaon,Private,0124-4141414,Cardiology|Neurology|Pulmonology
+Artemis Hospital,Gurgaon,Private,0124-4511111,Cardiology|Gastroenterology|Pulmonology
+Fortis Hospital,Gurgaon,Private,0124-4921021,Cardiology|Neurology|Pulmonology
+AIIMS Bhopal,Bhopal,Government,0755-2672234,Cardiology|Pulmonology|General Medicine
+AIIMS Jodhpur,Jodhpur,Government,0291-2740741,Cardiology|Neurology|Pulmonology
+AIIMS Patna,Patna,Government,0612-2451070,Cardiology|Neurology|Pulmonology
+PGIMER,Chandigarh,Government,0172-2746018,Cardiology|Neurology|Gastroenterology
+Fortis Hospital,Mohali,Private,0172-4692222,Cardiology|Pulmonology|Neurology
+Narayana Health,Bangalore,Private,080-71222222,Cardiology|Neurology|Gastroenterology
+Manipal Hospital,Bangalore,Private,080-25024444,Cardiology|Pulmonology|General Medicine
+Apollo Hospital,Bangalore,Private,080-26304050,Cardiology|Neurology|Gastroenterology
+St Johns Medical College,Bangalore,Private,080-22065000,Cardiology|Neurology|General Medicine
+KIMS Hospital,Hyderabad,Private,040-44885000,Cardiology|Pulmonology|Neurology
+Apollo Hospital,Hyderabad,Private,040-23607777,Cardiology|Gastroenterology|Pulmonology
+Yashoda Hospital,Hyderabad,Private,040-45674567,Cardiology|Neurology|General Medicine
+Care Hospitals,Hyderabad,Private,040-67206500,Cardiology|Pulmonology|Neurology
+Christian Medical College,Vellore,Private,0416-2281000,Cardiology|Neurology|Gastroenterology
+Apollo Hospital,Chennai,Private,044-28293333,Cardiology|Neurology|Gastroenterology
+Madras Medical Mission,Chennai,Private,044-26565991,Cardiology|Pulmonology
+Fortis Malar Hospital,Chennai,Private,044-42892222,Cardiology|Neurology|General Medicine
+AIIMS Nagpur,Nagpur,Government,0712-2877011,Cardiology|Pulmonology|General Medicine
+Care Hospital,Nagpur,Private,0712-3982222,Cardiology|Neurology|General Medicine
+Ruby Hall Clinic,Pune,Private,020-66455100,Cardiology|Neurology|Gastroenterology
+Jehangir Hospital,Pune,Private,020-66819999,Cardiology|Pulmonology|General Medicine
+KEM Hospital,Pune,Private,020-66037300,Cardiology|Neurology|Gastroenterology
+Tata Memorial Hospital,Mumbai,Government,022-24177000,Oncology|General Medicine
+Lilavati Hospital,Mumbai,Private,022-26751000,Cardiology|Neurology|Gastroenterology
+Kokilaben Hospital,Mumbai,Private,022-42696969,Cardiology|Neurology|Pulmonology
+Apollo Hospital,Mumbai,Private,022-62820000,Cardiology|Pulmonology|General Medicine
+AIIMS Raipur,Raipur,Government,0771-2573777,Cardiology|Pulmonology|General Medicine
+Care Hospital,Bhubaneswar,Private,0674-6666600,Cardiology|Pulmonology|Neurology
+SCB Medical College,Cuttack,Government,0671-2414355,Cardiology|Neurology|General Medicine
+AMRI Hospital,Kolkata,Private,033-66260000,Cardiology|Pulmonology|Gastroenterology
+Apollo Gleneagles Hospital,Kolkata,Private,033-23203040,Cardiology|Neurology|Pulmonology
+Medica Superspecialty Hospital,Kolkata,Private,033-66520000,Cardiology|Pulmonology|Neurology
+AIIMS Guwahati,Guwahati,Government,0361-2890000,Cardiology|Pulmonology|General Medicine
+Nemcare Hospital,Guwahati,Private,0361-2460000,Cardiology|Neurology|General Medicine
+AIIMS Bilaspur,Bilaspur,Government,01978-292000,Cardiology|Pulmonology|General Medicine
+IGMC Hospital,Shimla,Government,0177-2658111,Cardiology|Neurology|General Medicine
+AIIMS Bathinda,Bathinda,Government,0164-2867700,Cardiology|Pulmonology|General Medicine
+AIIMS Gorakhpur,Gorakhpur,Government,0551-2205501,Cardiology|Neurology|General Medicine
