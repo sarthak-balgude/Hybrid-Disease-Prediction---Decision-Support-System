@@ -1,0 +1,71 @@
+[
+  {"disease":"Heart Disease","specialty":"Cardiology"},
+  {"disease":"Hypertension","specialty":"Cardiology"},
+  {"disease":"Arrhythmia","specialty":"Cardiology"},
+  {"disease":"Angina","specialty":"Cardiology"},
+  {"disease":"Heart Failure","specialty":"Cardiology"},
+  {"disease":"Coronary Artery Disease","specialty":"Cardiology"},
+  {"disease":"Chest Pain","specialty":"Cardiology"},
+
+  {"disease":"Influenza","specialty":"General Medicine"},
+  {"disease":"Common Cold","specialty":"General Medicine"},
+  {"disease":"Viral Fever","specialty":"General Medicine"},
+  {"disease":"Fatigue","specialty":"General Medicine"},
+  {"disease":"Weakness","specialty":"General Medicine"},
+
+  {"disease":"COVID-19","specialty":"Pulmonology"},
+  {"disease":"Pneumonia","specialty":"Pulmonology"},
+  {"disease":"Asthma","specialty":"Pulmonology"},
+  {"disease":"Bronchitis","specialty":"Pulmonology"},
+  {"disease":"Tuberculosis","specialty":"Pulmonology"},
+  {"disease":"Shortness of Breath","specialty":"Pulmonology"},
+
+  {"disease":"Migraine","specialty":"Neurology"},
+  {"disease":"Epilepsy","specialty":"Neurology"},
+  {"disease":"Stroke","specialty":"Neurology"},
+  {"disease":"Anxiety","specialty":"Neurology"},
+  {"disease":"Depression","specialty":"Neurology"},
+  {"disease":"Parkinsons Disease","specialty":"Neurology"},
+  {"disease":"Alzheimers Disease","specialty":"Neurology"},
+
+  {"disease":"Food Poisoning","specialty":"Gastroenterology"},
+  {"disease":"Gastritis","specialty":"Gastroenterology"},
+  {"disease":"Acid Reflux","specialty":"Gastroenterology"},
+  {"disease":"Peptic Ulcer","specialty":"Gastroenterology"},
+  {"disease":"Diarrhea","specialty":"Gastroenterology"},
+  {"disease":"Constipation","specialty":"Gastroenterology"},
+
+  {"disease":"Diabetes","specialty":"Endocrinology"},
+  {"disease":"Thyroid Disorder","specialty":"Endocrinology"},
+  {"disease":"Hyperthyroidism","specialty":"Endocrinology"},
+  {"disease":"Hypothyroidism","specialty":"Endocrinology"},
+
+  {"disease":"Kidney Stone","specialty":"Nephrology"},
+  {"disease":"Chronic Kidney Disease","specialty":"Nephrology"},
+  {"disease":"Kidney Infection","specialty":"Nephrology"},
+
+  {"disease":"Arthritis","specialty":"Orthopedics"},
+  {"disease":"Bone Fracture","specialty":"Orthopedics"},
+  {"disease":"Back Pain","specialty":"Orthopedics"},
+  {"disease":"Joint Pain","specialty":"Orthopedics"},
+  {"disease":"Osteoporosis","specialty":"Orthopedics"},
+
+  {"disease":"Skin Infection","specialty":"Dermatology"},
+  {"disease":"Eczema","specialty":"Dermatology"},
+  {"disease":"Psoriasis","specialty":"Dermatology"},
+  {"disease":"Acne","specialty":"Dermatology"},
+
+  {"disease":"Eye Infection","specialty":"Ophthalmology"},
+  {"disease":"Cataract","specialty":"Ophthalmology"},
+  {"disease":"Glaucoma","specialty":"Ophthalmology"},
+  {"disease":"Blurred Vision","specialty":"Ophthalmology"},
+
+  {"disease":"Ear Infection","specialty":"ENT"},
+  {"disease":"Sinusitis","specialty":"ENT"},
+  {"disease":"Tonsillitis","specialty":"ENT"},
+  {"disease":"Hearing Loss","specialty":"ENT"},
+
+  {"disease":"Urinary Tract Infection","specialty":"Urology"},
+  {"disease":"Prostate Enlargement","specialty":"Urology"},
+  {"disease":"Bladder Infection","specialty":"Urology"}
+]
