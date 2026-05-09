@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hybrid Disease Prediction | Symptoms</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/css/symptoms.css">
+
+    
+
+    
+</head>
+
+<body class="antialiased selection:bg-sky-500 selection:text-white">
+
+    <div class="medical-bg">
+        <div class="medical-pattern"></div>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0B1120]/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-white rounded flex items-center justify-center shadow-lg shadow-white/5">
+                    <span class="font-display font-bold text-slate-900 text-sm tracking-tighter">GPD</span>
+                </div>
+                <div>
+                    <span class="block font-display font-bold text-sm leading-none tracking-tight text-white">Hybrid Prediction</span>
+                </div>
+            </div>
+            <a href="#" class="text-xs font-bold text-slate-400 hover:text-sky-400 transition flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            
+            <header class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+                <div>
+                    <h1 class="text-3xl font-display font-bold text-white mb-2">Patient Assessment</h1>
+                    <p class="text-slate-400 text-sm max-w-2xl leading-relaxed">Enter your demographic details and current symptoms below. Our hybrid system will cross-reference this data with physiological and psychological markers to provide intelligent decision support.</p>
+                </div>
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest rounded-full self-start md:self-auto">
+                    <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                    System Online
+                </div>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-2xl">
+                        <div class="px-6 py-4 border-b border-white/5 bg-slate-900/50 flex justify-between items-center">
+                            <h2 class="font-bold text-white text-lg"><i class="fas fa-clipboard-list text-sky-500 mr-2"></i> Clinical Input</h2>
+                            <span class="text-xs font-mono text-slate-500">STEP 1 OF 2</span>
+                        </div>
+
+                        <div class="p-6">
+                            <form action="/predict" method="POST" id="symptomForm">
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Age</label>
+                                        <input name="age" id="age" type="number" min="1" max="120" placeholder="e.g. 25" required 
+                                            class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:outline-none transition text-sm">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Gender</label>
+                                        <select name="gender" id="gender" required 
+                                            class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:outline-none transition text-sm cursor-pointer">
+                                            <option value="">Select Gender</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-6">
+                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Location (City)</label>
+                                    <select name="city" id="city" required 
+                                        class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:outline-none transition text-sm cursor-pointer">
+                                            <option value="">Select Nearest City</option>
+                                            <option>Dehradun</option>
+                                            <option>Rishikesh</option>
+                                            <option>Haridwar</option>
+                                            <option>Delhi</option>
+                                    </select>
+                                </div>
+
+                                <div class="h-px bg-slate-800 my-6"></div>
+
+                                <div class="mb-6">
+                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Reported Symptoms</label>
+                                    <textarea name="symptoms" id="symptoms" placeholder="Type symptoms separated by commas (e.g., fever, cough, extreme fatigue)" required 
+                                        class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-sky-500 focus:ring-1 focus:ring-sky-500 focus:outline-none transition text-sm min-h-[100px] resize-y"></textarea>
+                                    
+                                    <p class="mt-2 text-xs text-slate-500"><i class="fas fa-info-circle text-sky-500/70"></i> Enter at least <b>2 symptoms</b> for accurate processing.</p>
+                                    
+                                    <div class="flex flex-wrap gap-2 mt-4">
+                                        <button type="button" class="chip px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-full text-xs text-sky-400 hover:bg-slate-700 hover:border-sky-400 transition" data-s="fever">+ fever</button>
+                                        <button type="button" class="chip px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-full text-xs text-sky-400 hover:bg-slate-700 hover:border-sky-400 transition" data-s="cough">+ cough</button>
+                                        <button type="button" class="chip px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-full text-xs text-sky-400 hover:bg-slate-700 hover:border-sky-400 transition" data-s="headache">+ headache</button>
+                                        <button type="button" class="chip px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-full text-xs text-sky-400 hover:bg-slate-700 hover:border-sky-400 transition" data-s="fatigue">+ fatigue</button>
+                                        <button type="button" class="chip px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-full text-xs text-sky-400 hover:bg-slate-700 hover:border-sky-400 transition" data-s="chest pain">+ chest pain</button>
+                                        <button type="button" class="chip px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-full text-xs text-sky-400 hover:bg-slate-700 hover:border-sky-400 transition" data-s="shortness of breath">+ shortness of breath</button>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Detected Parameters</label>
+                                        <div id="tagPanel" class="w-full bg-slate-900/50 border border-slate-800 rounded-lg p-3 min-h-[50px] flex flex-wrap gap-2 items-center">
+                                            <span class="text-xs text-slate-600 italic">Awaiting input...</span>
+                                        </div>
+                                    </div>
+                                    <div class="hidden text-rose-400 text-xs mt-2 font-bold" id="symError"><i class="fas fa-exclamation-triangle"></i> Please enter at least 2 symptoms.</div>
+                                </div>
+
+                                <div class="h-px bg-slate-800 my-6"></div>
+
+                                <div class="mb-6">
+                                    <h3 class="text-sm font-bold text-white mb-4 flex items-center gap-2">
+                                        <i class="fas fa-brain text-purple-500"></i> Psychological Baseline <span class="text-[10px] font-normal text-slate-500 bg-slate-800 px-2 py-0.5 rounded ml-2">OPTIONAL</span>
+                                    </h3>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                        <div>
+                                            <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Stress Level</label>
+                                            <select name="stress" id="stress" class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:border-purple-500 focus:ring-1 focus:ring-purple-500 focus:outline-none transition text-sm cursor-pointer">
+                                                <option selected>Low</option>
+                                                <option>Medium</option>
+                                                <option>High</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Anxiety Level</label>
+                                            <select name="anxiety" id="anxiety" class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:border-purple-500 focus:ring-1 focus:ring-purple-500 focus:outline-none transition text-sm cursor-pointer">
+                                                <option selected>Low</option>
+                                                <option>Medium</option>
+                                                <option>High</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Sleep Quality</label>
+                                            <select name="sleep" id="sleep" class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:border-purple-500 focus:ring-1 focus:ring-purple-500 focus:outline-none transition text-sm cursor-pointer">
+                                                <option selected>Normal</option>
+                                                <option>Poor</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3 text-xs text-slate-500"><i class="fas fa-shield-alt text-slate-400"></i> Used strictly to filter somatic symptoms and prevent false anxiety-induced positives.</p>
+                                </div>
+
+                                <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                                    <button class="px-8 py-3.5 bg-sky-600 hover:bg-sky-500 text-white font-bold rounded-lg transition-all shadow-[0_0_20px_rgba(14,165,233,0.3)] hover:-translate-y-0.5" type="submit">
+                                        Run Prediction Logic
+                                    </button>
+                                    <button type="reset" id="resetBtn" class="px-6 py-3.5 bg-transparent border border-slate-700 hover:bg-slate-800 text-slate-400 hover:text-white font-medium rounded-lg transition-all">
+                                        Clear Form
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-1 space-y-6">
+                    <div class="glass-card rounded-2xl overflow-hidden shadow-2xl sticky top-24">
+                        <div class="px-6 py-4 border-b border-white/5 bg-slate-900/50 flex justify-between items-center">
+                            <h2 class="font-bold text-white text-lg"><i class="fas fa-satellite-dish text-sky-500 mr-2"></i> Safety Monitor</h2>
+                        </div>
+                        
+                        <div class="p-6 space-y-4">
+                            
+                            <div class="bg-slate-900/80 border border-slate-700 rounded-xl p-5 flex items-center justify-between">
+                                <span class="text-sm font-bold text-slate-400 uppercase">Current State</span>
+                                <div class="flex items-center gap-2 bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full">
+                                    <div id="riskDot" class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
+                                    <span id="riskText" class="text-xs font-bold text-white">Normal</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4 text-center">
+                                    <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Tokens</div>
+                                    <div class="text-2xl font-display font-bold text-sky-400" id="symCount">0</div>
+                                </div>
+                                <div class="bg-slate-900/50 border border-slate-800 rounded-xl p-4 text-center">
+                                    <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Base Risk</div>
+                                    <div class="text-lg font-display font-bold text-white mt-1" id="riskSignal">Low</div>
+                                </div>
+                            </div>
+
+                            <div class="bg-[#0B1120] border border-slate-800 rounded-xl p-4 font-mono text-xs text-slate-400 leading-relaxed shadow-inner">
+                                <span class="text-sky-500">></span> <span id="riskDesc">Symptoms look mild. System will predict using ML and show guidance if confidence is low.</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+<script src="/static/js/symptoms.js"></script>
+</body>
+</html>
